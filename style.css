@@ -1,0 +1,217 @@
+/* Custom Styles */
+
+/* Color Variables (adjust based on exact colors) */
+:root {
+    --navbar-bg: #2b1f18; /* Dark brown/black from header/footer */
+    --footer-bg: #f7f3ec; /* Light beige footer */
+    --accent-gold: #bfa975; /* Gold accent for links/highlights */
+    --button-beige: #f5efe2; /* Beige for buttons */
+    --button-beige-hover: #e9e0d1; /* Darker beige on hover */
+    --text-muted-custom: #6c757d; /* Standard muted text */
+    --section-heading-color: #4a4a4a; /* Dark grey for headings */
+    --hero-overlay-color: rgba(0, 0, 0, 0.4); /* Overlay darkness */
+}
+
+body {
+    font-family: sans-serif; /* Basic fallback font */
+    color: #333;
+}
+
+/* Navigation */
+.custom-navbar-bg {
+    background-color: var(--navbar-bg);
+    border-bottom: 3px solid var(--accent-gold); /* Gold line below navbar */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ffffff;
+}
+
+.navbar-brand {
+    color: var(--accent-gold) !important; /* Gold color for brand */
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 60vh; /* Adjust height as needed */
+    background: url('https://via.placeholder.com/1920x800/6c757d/ffffff?text=Pozadie+Cintorína') no-repeat center center;
+    background-size: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--hero-overlay-color);
+    z-index: 1;
+}
+
+.hero-section .container {
+    z-index: 2; /* Ensure content is above overlay */
+}
+
+.hero-subheading {
+    background-color: var(--accent-gold);
+    color: var(--navbar-bg); /* Dark text on gold background */
+    padding: 0.5rem 1rem;
+    display: inline-block; /* Make background fit text */
+    font-weight: 500;
+}
+
+.arrow-down {
+    margin-top: 2rem;
+}
+
+.arrow-icon {
+    font-size: 2.5rem; /* Make arrow larger */
+    color: var(--accent-gold);
+    /* Basic CSS Arrow - adjust styling */
+    display: inline-block;
+     /* More complex arrow styling if needed */
+     border: solid var(--accent-gold);
+     border-width: 0 3px 3px 0;
+     padding: 10px;
+     transform: rotate(45deg);
+     -webkit-transform: rotate(45deg);
+     opacity: 0.7;
+}
+
+
+/* Section Headings (Optional fancy style) */
+.section-heading {
+    font-family: serif; /* Example: Use a serif font like the screenshot */
+    font-size: 2.8rem;
+    color: var(--section-heading-color);
+    margin-bottom: 1rem; /* Default spacing */
+    font-weight: normal;
+    position: relative; /* For potential underlines or decorations */
+}
+
+/* Example underline for headings */
+/* .section-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-gold);
+    margin: 10px auto 0;
+} */
+
+
+/* Service Cards */
+.service-card img.rounded-circle {
+    width: 120px; /* Fixed size for circles */
+    height: 120px;
+    object-fit: cover; /* Ensure image covers circle */
+    border: 3px solid #eee; /* Light border */
+}
+
+.service-card h4 {
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+.service-card ul {
+    line-height: 1.6;
+}
+
+/* Catalog Items */
+.catalog-item img.rounded-circle {
+    width: 120px; /* Smaller circles for catalog */
+    height: 120px;
+    object-fit: cover;
+    margin: 0 auto; /* Center the image */
+    border: 1px solid #ddd;
+}
+
+.catalog-caption {
+    font-weight: 500;
+    color: var(--section-heading-color);
+    margin-top: 0.5rem;
+}
+
+
+/* Custom Beige Button */
+.btn-custom-beige {
+    background-color: var(--button-beige);
+    border-color: var(--button-beige);
+    color: var(--navbar-bg); /* Dark text */
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-custom-beige:hover {
+    background-color: var(--button-beige-hover);
+    border-color: var(--button-beige-hover);
+    color: var(--navbar-bg);
+}
+
+/* Footer */
+.footer-section {
+    background-color: var(--footer-bg);
+    color: #555; /* Slightly darker text for footer */
+    font-size: 0.9rem;
+}
+
+.footer-section h5 {
+    color: var(--section-heading-color);
+    font-weight: bold;
+    margin-bottom: 1rem; /* More space below footer headings */
+}
+
+.footer-section p {
+    margin-bottom: 0.3rem; /* Tighter spacing for address lines */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        text-align: center; /* Center nav items when collapsed */
+    }
+     .navbar-brand { /* Ensure text brand is centered on mobile */
+        width: 100%;
+        text-align: center;
+    }
+    .navbar-toggler { /* Move toggler slightly */
+       position: absolute;
+       right: 15px;
+       top: 15px;
+    }
+    .hero-section {
+        min-height: 50vh; /* Slightly shorter hero on mobile */
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+     .hero-section h2 {
+        font-size: 1.5rem;
+    }
+    .hero-subheading {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+    .section-heading {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+     #gallery .col-6 { /* Ensure gallery images stack nicely */
+         padding: 5px;
+     }
+    .service-card, .catalog-item {
+        margin-bottom: 1.5rem; /* Add space between stacked items */
+    }
+}
